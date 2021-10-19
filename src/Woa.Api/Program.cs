@@ -5,6 +5,7 @@ global using Faslinq;
 global using Microsoft.AspNetCore;
 global using Woa.Api.Startup;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
 
 namespace Woa.Api
 {
@@ -17,6 +18,11 @@ namespace Woa.Api
             builder.AddServiceContracts();
 
             var app = builder.Build();
+
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseRoute();
 

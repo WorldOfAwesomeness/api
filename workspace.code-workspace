@@ -46,9 +46,6 @@
 				},
 				"env": {
 					"ASPNETCORE_ENVIRONMENT": "Development"
-				},
-				"sourceFileMap": {
-					"/Views": "${workspaceFolder}/src/Woa.Api/bin/Debug/net6.0/Views"
 				}
 			}
 		],

@@ -7,7 +7,7 @@ namespace Woa.Api.Startup
     {
         public static WebApplicationBuilder AddServiceContracts(this WebApplicationBuilder builder)
         {
-            builder.Services.AddScoped<IServiceContract, GitHubSearchService>();
+            builder.Services.AddSingleton<IServiceContract, GitHubSearchService>();
 
             return builder;
         }
