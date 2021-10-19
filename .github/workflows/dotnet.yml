@@ -3,8 +3,6 @@ name: .NET
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -17,7 +15,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-        allow-preview: true
+        include-prerelease: true
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
