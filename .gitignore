@@ -348,3 +348,33 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+src/Woa.Api/published/appsettings.Development.json
+src/Woa.Api/published/appsettings.json
+src/Woa.Api/published/Faslinq.dll
+src/Woa.Api/published/Microsoft.Win32.SystemEvents.dll
+src/Woa.Api/published/Newtonsoft.Json.dll
+src/Woa.Api/published/System.Drawing.Common.dll
+src/Woa.Api/published/System.Private.ServiceModel.dll
+src/Woa.Api/published/System.Security.Permissions.dll
+src/Woa.Api/published/System.ServiceModel.dll
+src/Woa.Api/published/System.ServiceModel.Primitives.dll
+src/Woa.Api/published/System.Windows.Extensions.dll
+src/Woa.Api/published/web.config
+src/Woa.Api/published/Woa.Api
+src/Woa.Api/published/Woa.Api.deps.json
+src/Woa.Api/published/Woa.Api.dll
+src/Woa.Api/published/Woa.Api.runtimeconfig.json
+src/Woa.Api/published/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+src/Woa.Api/published/runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll
+src/Woa.Api/published/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
+src/Woa.Api/published/runtimes/win/lib/netcoreapp3.0/System.Windows.Extensions.dll
+src/Woa.Api/published/published/appsettings.Development.json
+src/Woa.Api/published/published/appsettings.json
+src/Woa.Api/published/published/web.config
+src/Woa.Api/published/published/Woa.Api.deps.json
+src/Woa.Api/published/published/Woa.Api.runtimeconfig.json
+src/Woa.Api/published/published/published/appsettings.Development.json
+src/Woa.Api/published/published/published/appsettings.json
+src/Woa.Api/published/published/published/web.config
+src/Woa.Api/published/published/published/Woa.Api.deps.json
+src/Woa.Api/published/published/published/Woa.Api.runtimeconfig.json

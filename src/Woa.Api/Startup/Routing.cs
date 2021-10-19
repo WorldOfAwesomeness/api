@@ -20,7 +20,7 @@ namespace Woa.Api.Startup
 
             foreach (var service in services)
             {
-                service.Register(app, Methods.Post, "/");
+                service.Register(app, Methods.Get, "/");
             }
 
             return app;
