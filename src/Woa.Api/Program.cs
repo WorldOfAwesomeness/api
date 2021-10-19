@@ -14,9 +14,11 @@ namespace Woa.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.AddServiceContracts();
+
             var app = builder.Build();
 
-            Routing.UseRoute(app);
+            app.UseRoute();
 
             app.Run();
         }
