@@ -1,9 +1,20 @@
-namespace Woa.Api.Startup;
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using Faslinq;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 
-public static class Routing
+namespace Woa.Api.Startup
 {
-    public static WebApplication UseRoute(this WebApplication app)
+
+    public static class Routing
     {
-        app.MapGet("/", () => "Hello World!");
+        public static WebApplication UseRoute(WebApplication app)
+        {
+            app.MapGet("/", () => "Hello World!");
+
+            return app;
+        }
     }
 }
