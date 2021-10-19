@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: welcomesitecontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c59e59a05b8c430c902c7c05f3906af4 }}/WoaApi:${{ github.sha }}
+        tags: welcomesitecontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c59e59a05b8c430c902c7c05f3906af4 }}/woaapi:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'WoaApi'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_40a3842793c04c388be8eb46ac98a179 }}
-        images: 'welcomesitecontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c59e59a05b8c430c902c7c05f3906af4 }}/WoaApi:${{ github.sha }}'
+        images: 'welcomesitecontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c59e59a05b8c430c902c7c05f3906af4 }}/woaapi:${{ github.sha }}'
