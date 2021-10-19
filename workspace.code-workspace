@@ -54,5 +54,13 @@
 		],
 		"compounds": []
 	},
-	"settings": {}
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"firefox-devtools.vscode-firefox-debug",
+			"radwanfaci.stack-trace-formatter",
+			"redhat.vscode-xml",
+			"formulahendry.code-runner"
+		]
+	}
 }
