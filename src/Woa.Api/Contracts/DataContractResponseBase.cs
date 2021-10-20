@@ -25,21 +25,30 @@ namespace Woa.Api.Startup
         public Exception? Exception { get; init; }
 
         [DataMember]
-        public string? SerializedData { get; init; }
+        public string? SerializedData { get; private set; }
 
         [DataMember]
-        public string? TypeName { get; init; }
+        public string? TypeName { get; private set; }
+
+        public DataContractResponseBase SetData<TData>(TData? data)
+        {
+            TypeName = typeof(TData).FullName;
+            SerializedData = data.ToJson();
+
+            return this;
+        }
 
         public object? Deserialize(JsonSerializerSettings? settings = default)
         {
-            if (TypeName is not (null or "") && SerializedData is not (null or ""))
+            if (TypeName is null or "" || SerializedData is null or "")
             {
-                var data = SerializedData.FromJson(TypeName, settings);
-
-                return data;
+                return null;
             }
 
-            return null;
+            var data = SerializedData.FromJson(TypeName, settings);
+
+            return data;
+
         }
         public TDeserialized? Deserialize<TDeserialized>(JsonSerializerSettings? settings = default)
             where TDeserialized : new()

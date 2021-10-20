@@ -9,5 +9,6 @@ namespace Woa.Api.Startup
         public GitHubSearchResult(Exception ex) : base(ex)
         { }
 
+        public object? Data { get; set; }
     }
 }

@@ -1,4 +1,3 @@
-using Microsoft.Extensions.ObjectPool;
 using Newtonsoft.Json;
 
 namespace Woa.Api.Common
@@ -8,15 +7,15 @@ namespace Woa.Api.Common
         private static readonly JsonSerializerSettings _defaultSettings = new()
         {
             Formatting = Formatting.Indented,
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         };
 
         private static JsonSerializerSettings _currentSettings = _defaultSettings;
 
-        public static JsonSerializerSettings CurrentSettings 
-        { 
-            get => _currentSettings; 
-            set => _currentSettings = value; 
+        public static JsonSerializerSettings CurrentSettings
+        {
+            get => _currentSettings;
+            set => _currentSettings = value;
         }
 
         public static JsonSerializerSettings DefaultSettings => _defaultSettings;
@@ -33,7 +32,7 @@ namespace Woa.Api.Common
         public static TObject? FromJson<TObject>(
             this string? json,
             JsonSerializerSettings? settings = default)
-                where TObject : new()
+            where TObject : new()
         {
             if (json is null or "")
             {
@@ -41,6 +40,18 @@ namespace Woa.Api.Common
             }
 
             return JsonConvert.DeserializeObject<TObject>(json, settings ?? CurrentSettings);
+        }
+
+        public static object? FromJson(
+            this string? json,
+            JsonSerializerSettings? settings = default)
+        {
+            if (json is null or "")
+            {
+                return new();
+            }
+
+            return JsonConvert.DeserializeObject(json, settings ?? CurrentSettings);
         }
 
         public static object? FromJson(

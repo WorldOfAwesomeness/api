@@ -2,6 +2,6 @@ namespace Woa.Api.Startup
 {
     public enum Methods
     {
-        Get, Post
+        Get, Post,
     }
 }
