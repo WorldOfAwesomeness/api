@@ -27,6 +27,7 @@ public static class Container
 
         //new OptionsBuilder<MarkdownServerOptions>(builder.Services, "MarkdownServer");
         builder.Services.AddOptions<MarkdownServerOptions>("MarkdownServer");
+        builder.Services.AddSingleton<ConcurrentDictionary<int, Item>>();
 
         return builder;
     }

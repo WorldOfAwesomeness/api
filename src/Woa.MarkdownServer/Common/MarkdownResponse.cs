@@ -9,6 +9,7 @@ public record MarkdownResponse
 {
     private string? _layout = null;
     private string? _markdown = null;
+    private string? _sidebarMarkdown;
 
     public MarkdownServerOptions? Options => MarkdownServerOptions.Current;
     public Exception? Error { get; }
@@ -19,9 +20,10 @@ public record MarkdownResponse
         StatusCode = HttpStatusCode.OK;
     }
 
-    private MarkdownResponse(string markdown, MarkdownServerOptions? options = null) : this()
+    private MarkdownResponse(string markdown, string? sidebarMarkdown, MarkdownServerOptions? options = null) : this()
     {
         SetMarkdown(markdown);
+        SetSidebarMarkdown(sidebarMarkdown);
     }
 
     public MarkdownResponse(HttpStatusCode statusCode, MarkdownServerOptions? options = null) : this()
@@ -40,11 +42,18 @@ public record MarkdownResponse
         _markdown = markdown;
     }
 
-    public static MarkdownResponse Create(string markdown)
-        => new(markdown);
+    private void SetSidebarMarkdown(string? markdown)
+    {
+        _sidebarMarkdown = markdown;
+    }
+
+
+
+    public static MarkdownResponse Create(string markdown, string? sidebarMarkdown)
+        => new(markdown, sidebarMarkdown);
 
     public static MarkdownResponse CreateFromFile(string filename)
-        => new(File.ReadAllText(filename));
+        => new(File.ReadAllText(filename), "");
 
     public string ToHtml()
     {
@@ -58,20 +67,35 @@ public record MarkdownResponse
         return html;
     }
 
+    public string ToSidebarHtml()
+    {
+        var pipeline = new MarkdownPipelineBuilder()
+            .UseAdvancedExtensions()
+            .UseSyntaxHighlighting()
+            .Build();
+
+        var html = Markdown.ToHtml(_sidebarMarkdown ?? "", pipeline);
+
+        return html;
+    }
+
     public string ToHtmlPage()
     {
         var html = ToHtml();
+        var sidebarHtml = ToSidebarHtml();
 
         var layout = _layout ??= File.ReadAllText(Options?.Value.LayoutFile ?? "./wwwroot/Layout.html");
 
-        var page = layout.Replace("!MarkdownBody", html);
+        var page = 
+            layout.Replace("!MarkdownBody", html)
+                  .Replace("!MarkdownSidebar", sidebarHtml);
 
         return page;
     }
 
     public MarkdownResult ToMarkdownResult()
     {
-        return new MarkdownResult(_markdown ?? "");
+        return new MarkdownResult(_markdown ?? "", "");
     }
 }
 

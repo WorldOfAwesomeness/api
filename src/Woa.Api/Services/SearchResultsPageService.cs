@@ -39,7 +39,7 @@ public sealed class SearchResultsPageService
             markdown.AppendLine("<div class='alert alert-danger'>Search response is null.</div>");
         }
 
-        return new MarkdownResult(markdown.ToString());
+        return new MarkdownResult(markdown.ToString(),request.SidebarContents);
     }
 
     private void BuildResults(StringBuilder sb, GitHubSearchResult result)
@@ -62,6 +62,4 @@ public sealed class SearchResultsPageService
 
         }
     }
-
-    internal static ConcurrentDictionary<int, Item> Items { get; } = new();
 }

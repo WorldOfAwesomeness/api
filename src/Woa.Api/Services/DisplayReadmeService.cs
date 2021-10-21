@@ -42,7 +42,7 @@ public sealed class DisplayReadmeService
 
             var bytes = Convert.FromBase64String(result.ReadmeData?.Content ?? "");
             var md = Encoding.UTF8.GetString(bytes);
-            var html = MarkdownResponse.Create(md).ToHtml();
+            var html = MarkdownResponse.Create(md, request.SidebarContents).ToHtml();
 
             markdown.AppendLine("<article class='markdown-body entry-content container-lg'>");
             markdown.AppendLine(html);
@@ -59,7 +59,7 @@ public sealed class DisplayReadmeService
             markdown.AppendLine("<div class='alert alert-danger'>Search response is null.</div>");
         }
 
-        return new MarkdownResult(markdown.ToString());
+        return new MarkdownResult(markdown.ToString(), request.SidebarContents);
     }
 
     private void BuildResults(StringBuilder sb, GitHubReadmeResult result)

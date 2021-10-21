@@ -2,16 +2,19 @@
 
 public class MarkdownResult : IResult
 {
-    private readonly string _markdown;
+    public string Markdown { get; set; }
+    public string? SidebarMarkdown { get; set; }
 
     public MarkdownResult()
     {
-        _markdown = "";
+        Markdown = "";
+        SidebarMarkdown = "";
     }
 
-    public MarkdownResult(string markdown)
+    public MarkdownResult(string markdown, string? requestSidebarContents)
     {
-        _markdown = markdown;
+        Markdown = markdown;
+        SidebarMarkdown = requestSidebarContents;
     }
 
     /// <summary>Write an HTTP response reflecting the result.</summary>
@@ -19,7 +22,7 @@ public class MarkdownResult : IResult
     /// <returns>A task that represents the asynchronous execute operation.</returns>
     public Task ExecuteAsync(HttpContext context)
     {
-        var html = MarkdownResponse.Create(_markdown).ToHtmlPage();
+        var html = MarkdownResponse.Create(Markdown, SidebarMarkdown).ToHtmlPage();
         var memory = new ReadOnlyMemory<byte>(Encoding.UTF8.GetBytes(html));
         context.Response.StatusCode = (int)HttpStatusCode.OK;
         context.Response.ContentType = "text/html";

@@ -15,6 +15,6 @@ app.Map("/", Index);
 app.Run();
 
 async Task Index(HttpContext context)
-    => await new MarkdownResult("# Hello World!").ExecuteAsync(context);
+    => await new MarkdownResult("# Hello World!", "## Sidebar").ExecuteAsync(context);
 
 

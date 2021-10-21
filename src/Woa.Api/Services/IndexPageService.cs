@@ -13,5 +13,5 @@ public class IndexPageService
     internal override Task<MarkdownResult?> Operation(
         HttpContext context, 
         DataContractBase? request) 
-        => Task.FromResult(new MarkdownResult(File.ReadAllText("./Markdown/index.md")));
+        => Task.FromResult(new MarkdownResult(File.ReadAllText("./Markdown/index.md"), "## Sidebar"));
 }

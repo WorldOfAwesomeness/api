@@ -1,15 +1,17 @@
 using Markdig.Extensions.Hardlines;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace Woa.Api.Common;
 
 [ServiceContract]
 public abstract class ServiceContractBase<TRequest, TResult>
     : IServiceContract
+        where TRequest : DataContractBase
         where TResult : IResult, new()
 {
-    public IServiceProvider ServiceProvider
+    public static IServiceProvider ServiceProvider
     {
-        get; init;
+        get; set;
     }
 
     protected ServiceContractBase(
@@ -72,6 +74,7 @@ public abstract class ServiceContractBase<TRequest, TResult>
                     request = this switch
                     {
                         DisplayReadmeService drs => (TRequest?)(object)new DisplayReadmeRequest { BodyContents = context.Request.Query["id"][0] },
+                        IndexPageService idx => (TRequest?)(object)new DisplayReadmeRequest(),
                         _ => default
                     };
                     break;
@@ -81,6 +84,11 @@ public abstract class ServiceContractBase<TRequest, TResult>
 
             if (result is not null)
             {
+                if (result is MarkdownResult mr)
+                {
+                    mr.SidebarMarkdown = BuildSidebar();
+                }
+
                 await result!.ExecuteAsync(context).ConfigureAwait(false);
             }
         }
@@ -88,6 +96,18 @@ public abstract class ServiceContractBase<TRequest, TResult>
         {
             await SendErrorResponse(ex, context);
         }
+    }
+
+    protected virtual string? BuildSidebar()
+    {
+        var sb = new StringBuilder();
+
+        foreach (var item in Items.OrderBy(p => p.Value.Name).ThenBy(p => p.Value.Owner))
+        {
+            sb.AppendLine($"* [{item.Value.Owner?.Login}/{item.Value.Name}](/DisplayReadme?id={item.Value.Id})");
+        }
+
+        return sb.ToString();
     }
 
     private static Task SendErrorResponse(Exception ex, HttpContext context)
@@ -118,4 +138,6 @@ public abstract class ServiceContractBase<TRequest, TResult>
 
         return context.Response.WriteAsJsonAsync(error, error.GetType());
     }
+    internal static ConcurrentDictionary<int, Item>? Items 
+        => ServiceProvider.GetService<ConcurrentDictionary<int, Item>>();
 }
