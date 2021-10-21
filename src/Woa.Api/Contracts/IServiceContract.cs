@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-
-namespace Woa.Api.Startup;
+namespace Woa.Api.Contracts;
 
 public interface IServiceContract
 {
@@ -8,8 +6,8 @@ public interface IServiceContract
     {
         get;
     }
-    IEndpointConventionBuilder Register(WebApplication app,
-        Methods method,
-        string path,
-        int order);
+
+    Methods Method => Methods.Get;
+
+    IEndpointConventionBuilder Register(WebApplication app, int order);
 }

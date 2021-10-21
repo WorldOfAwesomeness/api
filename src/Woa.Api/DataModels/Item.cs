@@ -1,320 +1,320 @@
-namespace Woa.Api.Startup;
+namespace Woa.Api.DataModels;
 
 public class Item
 {
-    public int id
+    public int? Id
     {
         get; set;
     }
-    public string node_id
+    public string? NodeId
     {
         get; set;
     }
-    public string name
+    public string? Name
     {
         get; set;
     }
-    public string full_name
+    public string? FullName
     {
         get; set;
     }
-    public bool _private
+    public bool? Private
     {
         get; set;
     }
-    public Owner owner
+    public Owner? Owner
     {
         get; set;
     }
-    public string html_url
+    public string? HtmlUrl
     {
         get; set;
     }
-    public string description
+    public string? Description
     {
         get; set;
     }
-    public bool fork
+    public bool? Fork
     {
         get; set;
     }
-    public string url
+    public string? Url
     {
         get; set;
     }
-    public string forks_url
+    public string? ForksUrl
     {
         get; set;
     }
-    public string keys_url
+    public string? KeysUrl
     {
         get; set;
     }
-    public string collaborators_url
+    public string? CollaboratorsUrl
     {
         get; set;
     }
-    public string teams_url
+    public string? TeamsUrl
     {
         get; set;
     }
-    public string hooks_url
+    public string? HooksUrl
     {
         get; set;
     }
-    public string issue_events_url
+    public string? IssueEventsUrl
     {
         get; set;
     }
-    public string events_url
+    public string? EventsUrl
     {
         get; set;
     }
-    public string assignees_url
+    public string? AssigneesUrl
     {
         get; set;
     }
-    public string branches_url
+    public string? BranchesUrl
     {
         get; set;
     }
-    public string tags_url
+    public string? TagsUrl
     {
         get; set;
     }
-    public string blobs_url
+    public string? BlobsUrl
     {
         get; set;
     }
-    public string git_tags_url
+    public string? GitTagsUrl
     {
         get; set;
     }
-    public string git_refs_url
+    public string? GitRefsUrl
     {
         get; set;
     }
-    public string trees_url
+    public string? TreesUrl
     {
         get; set;
     }
-    public string statuses_url
+    public string? StatusesUrl
     {
         get; set;
     }
-    public string languages_url
+    public string? LanguagesUrl
     {
         get; set;
     }
-    public string stargazers_url
+    public string? StargazersUrl
     {
         get; set;
     }
-    public string contributors_url
+    public string? ContributorsUrl
     {
         get; set;
     }
-    public string subscribers_url
+    public string? SubscribersUrl
     {
         get; set;
     }
-    public string subscription_url
+    public string? SubscriptionUrl
     {
         get; set;
     }
-    public string commits_url
+    public string? CommitsUrl
     {
         get; set;
     }
-    public string git_commits_url
+    public string? GitCommitsUrl
     {
         get; set;
     }
-    public string comments_url
+    public string? CommentsUrl
     {
         get; set;
     }
-    public string issue_comment_url
+    public string? IssueCommentUrl
     {
         get; set;
     }
-    public string contents_url
+    public string? ContentsUrl
     {
         get; set;
     }
-    public string compare_url
+    public string? CompareUrl
     {
         get; set;
     }
-    public string merges_url
+    public string? MergesUrl
     {
         get; set;
     }
-    public string archive_url
+    public string? ArchiveUrl
     {
         get; set;
     }
-    public string downloads_url
+    public string? DownloadsUrl
     {
         get; set;
     }
-    public string issues_url
+    public string? IssuesUrl
     {
         get; set;
     }
-    public string pulls_url
+    public string? PullsUrl
     {
         get; set;
     }
-    public string milestones_url
+    public string? MilestonesUrl
     {
         get; set;
     }
-    public string notifications_url
+    public string? NotificationsUrl
     {
         get; set;
     }
-    public string labels_url
+    public string? LabelsUrl
     {
         get; set;
     }
-    public string releases_url
+    public string? ReleasesUrl
     {
         get; set;
     }
-    public string deployments_url
+    public string? DeploymentsUrl
     {
         get; set;
     }
-    public DateTime created_at
+    public DateTime? CreatedAt
     {
         get; set;
     }
-    public DateTime updated_at
+    public DateTime? UpdatedAt
     {
         get; set;
     }
-    public DateTime pushed_at
+    public DateTime? PushedAt
     {
         get; set;
     }
-    public string git_url
+    public string? GitUrl
     {
         get; set;
     }
-    public string ssh_url
+    public string? SshUrl
     {
         get; set;
     }
-    public string clone_url
+    public string? CloneUrl
     {
         get; set;
     }
-    public string svn_url
+    public string? SvnUrl
     {
         get; set;
     }
-    public string homepage
+    public string? Homepage
     {
         get; set;
     }
-    public int size
+    public int? Size
     {
         get; set;
     }
-    public int stargazers_count
+    public int? StargazersCount
     {
         get; set;
     }
-    public int watchers_count
+    public int? WatchersCount
     {
         get; set;
     }
-    public object language
+    public object? Language
     {
         get; set;
     }
-    public bool has_issues
+    public bool? HasIssues
     {
         get; set;
     }
-    public bool has_projects
+    public bool? HasProjects
     {
         get; set;
     }
-    public bool has_downloads
+    public bool? HasDownloads
     {
         get; set;
     }
-    public bool has_wiki
+    public bool? HasWiki
     {
         get; set;
     }
-    public bool has_pages
+    public bool? HasPages
     {
         get; set;
     }
-    public int forks_count
+    public int? ForksCount
     {
         get; set;
     }
-    public object mirror_url
+    public object? MirrorUrl
     {
         get; set;
     }
-    public bool archived
+    public bool? Archived
     {
         get; set;
     }
-    public bool disabled
+    public bool? Disabled
     {
         get; set;
     }
-    public int open_issues_count
+    public int? OpenIssuesCount
     {
         get; set;
     }
-    public License license
+    public License? License
     {
         get; set;
     }
-    public bool allow_forking
+    public bool? AllowForking
     {
         get; set;
     }
-    public bool is_template
+    public bool? IsTemplate
     {
         get; set;
     }
-    public string[] topics
+    public string[]? Topics
     {
         get; set;
     }
-    public string visibility
+    public string? Visibility
     {
         get; set;
     }
-    public int forks
+    public int? Forks
     {
         get; set;
     }
-    public int open_issues
+    public int? OpenIssues
     {
         get; set;
     }
-    public int watchers
+    public int? Watchers
     {
         get; set;
     }
-    public string default_branch
+    public string? DefaultBranch
     {
         get; set;
     }
-    public float score
+    public float Score
     {
         get; set;
     }
-    public Text_Matches[] text_matches
+    public TextMatches[]? TextMatches
     {
         get; set;
     }

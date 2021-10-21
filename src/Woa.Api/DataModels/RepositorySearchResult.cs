@@ -1,20 +1,20 @@
-namespace Woa.Api.Startup;
+namespace Woa.Api.DataModels;
 
 public class RepositorySearchResult
 {
-    public int total_count
+    public int? TotalCount
     {
         get; set;
     }
-    public int item_count
+    public int? ItemCount
     {
         get; set;
     }
-    public bool incomplete_results
+    public bool? IncompleteResults
     {
         get; set;
     }
-    public Item[] items
+    public Item[]? Items
     {
         get; set;
     }

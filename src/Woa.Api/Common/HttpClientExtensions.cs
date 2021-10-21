@@ -1,6 +1,6 @@
 using System.Net.Http;
 
-namespace Woa.Api.Startup;
+namespace Woa.Api.Common;
 
 public static class HttpClientExtensions
 {

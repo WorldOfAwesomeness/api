@@ -1,76 +1,76 @@
-namespace Woa.Api.Startup;
+namespace Woa.Api.DataModels;
 
 public class Owner
 {
-    public string login
+    public string? Login
     {
         get; set;
     }
-    public int id
+    public int? Id
     {
         get; set;
     }
-    public string node_id
+    public string? NodeId
     {
         get; set;
     }
-    public string avatar_url
+    public string? AvatarUrl
     {
         get; set;
     }
-    public string gravatar_id
+    public string? GravatarId
     {
         get; set;
     }
-    public string url
+    public string? Url
     {
         get; set;
     }
-    public string html_url
+    public string? HtmlUrl
     {
         get; set;
     }
-    public string followers_url
+    public string? FollowersUrl
     {
         get; set;
     }
-    public string following_url
+    public string? FollowingUrl
     {
         get; set;
     }
-    public string gists_url
+    public string? GistsUrl
     {
         get; set;
     }
-    public string starred_url
+    public string? StarredUrl
     {
         get; set;
     }
-    public string subscriptions_url
+    public string? SubscriptionsUrl
     {
         get; set;
     }
-    public string organizations_url
+    public string? OrganizationsUrl
     {
         get; set;
     }
-    public string repos_url
+    public string? ReposUrl
     {
         get; set;
     }
-    public string events_url
+    public string? EventsUrl
     {
         get; set;
     }
-    public string received_events_url
+    public string? ReceivedEventsUrl
     {
         get; set;
     }
-    public string type
+    public string? Type
     {
         get; set;
     }
-    public bool site_admin
+    public bool? SiteAdmin
     {
         get; set;
     }

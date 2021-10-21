@@ -1,24 +1,24 @@
-namespace Woa.Api.Startup;
+namespace Woa.Api.DataModels;
 
 public class License
 {
-    public string key
+    public string? Key
     {
         get; set;
     }
-    public string name
+    public string? Name
     {
         get; set;
     }
-    public string spdx_id
+    public string? SpdxId
     {
         get; set;
     }
-    public object url
+    public object? Url
     {
         get; set;
     }
-    public string node_id
+    public string? NodeId
     {
         get; set;
     }

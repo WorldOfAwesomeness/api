@@ -1,4 +1,4 @@
-﻿{
+{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -10,12 +10,13 @@
   "profiles": {
     "Woa.Api": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7274;http://localhost:5019",
+      "launchUrl": "https://localhost:7274/DisplayReadme?id=21737465",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:7274;http://localhost:5019",
+      "dotnetRunMessages": true
     },
     "IIS Express": {
       "commandName": "IISExpress",

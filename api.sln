@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F5468970
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Woa.Api.Tests", "tests\Woa.Api.Tests\Woa.Api.Tests.csproj", "{62EFF577-0D0F-4B43-8613-10BF9EC3B9E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Woa.MarkdownServer", "src\Woa.MarkdownServer\Woa.MarkdownServer.csproj", "{1A950776-80A5-4874-884C-2B827C838B8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,14 @@ Global
 		{62EFF577-0D0F-4B43-8613-10BF9EC3B9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62EFF577-0D0F-4B43-8613-10BF9EC3B9E6}.Release|x64.ActiveCfg = Release|x64
 		{62EFF577-0D0F-4B43-8613-10BF9EC3B9E6}.Release|x64.Build.0 = Release|x64
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Debug|x64.Build.0 = Debug|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Release|x64.ActiveCfg = Release|Any CPU
+		{1A950776-80A5-4874-884C-2B827C838B8B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CC5FD7AE-C338-4DD5-816E-820A139DFFF7} = {D0037172-F34A-461F-910B-1D91749BE1DC}
 		{62EFF577-0D0F-4B43-8613-10BF9EC3B9E6} = {F5468970-306A-11EC-9260-C505DE7A118C}
+		{1A950776-80A5-4874-884C-2B827C838B8B} = {D0037172-F34A-461F-910B-1D91749BE1DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {11CA9F2D-EF3F-471E-B4BA-DB9455712A5A}

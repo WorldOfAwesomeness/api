@@ -1,12 +1,12 @@
-namespace Woa.Api.Startup;
+namespace Woa.Api.DataModels;
 
 public class Match
 {
-    public string text
+    public string? Text
     {
         get; set;
     }
-    public int[] indices
+    public int[]? Indices
     {
         get; set;
     }
