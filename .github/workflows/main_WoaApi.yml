@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: welcomesitecontainer.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c59e59a05b8c430c902c7c05f3906af4 }}/woaapi:${{ github.sha }}
-        file: ./Container/docker-compose
+        file: ./docker-compose
 
   deploy:
     runs-on: ubuntu-latest
