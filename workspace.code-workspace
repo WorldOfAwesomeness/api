@@ -57,7 +57,8 @@
 			"firefox-devtools.vscode-firefox-debug",
 			"radwanfaci.stack-trace-formatter",
 			"redhat.vscode-xml",
-			"formulahendry.code-runner"
+			"formulahendry.code-runner",
+			"ms-vscode.azure-account"
 		]
 	}
 }

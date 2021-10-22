@@ -11,7 +11,7 @@ services:
         # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
         NODE_VERSION: "16"
         # [Option] Install Azure CLI
-        INSTALL_AZURE_CLI: "false"
+        INSTALL_AZURE_CLI: "true"
 
     volumes:
       - ..:/workspace:cached
